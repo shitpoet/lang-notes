@@ -125,3 +125,8 @@ Static methods do not inherit genericness of a class. To make a static method ge
     public static <T> Optional<T> of(T value) {
     }
 
+## Function references
+
+    ArrayList::size
+
+TODO
