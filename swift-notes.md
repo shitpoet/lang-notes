@@ -23,11 +23,79 @@ There're fixed width signed and unsigned integer types:
     UInt8, UInt16, UInt32, UInt64
 
 
+## Literals
+
+    true
+    false
+    12
+    012      # 12 (no octal literals)
+    .45      # TOCHECK
+    12.45
+    12.
+    0b1010
+    0o777    # octal prefix
+    0xff00ee
+    123_456.789_012
+    1.0e3
+    nil      # for reference types incl. Optional
+    1..5     # closed range
+    1..<5    # half-open range
+
+### String interpolation
+
+All string literals support interpolation with `\()`:
+
+    "x is equal to \(x)"
+    "Six by nine is \(6 * 9), not 42!"
+
+### Raw strings
+
+    #"x is equal to "\(x)""#
+    ##"""##
+    ###"""###
+
+### MUlti-line strings
+
+    """
+      some
+      long
+      string
+    """
+
+    #"""
+      text
+    """#
+
+#### Arrays, dictionaries
+
+Empty collections' literals require context:
+
+    []      // note: full type is non-deducable
+    [:]     // note: full type is non-deducable
+
+    let a: [Int] = []              // ok
+    let a: Array<Int> = []         // ok
+    let d: [String: Double] = [:]  // ok
+
+
+## Type conversions
+
+    Int(s)
+    String(i)
+    Character(s)  //TOCHECK: correct?
+
+
 ## Mutable and immutable variables
 
     let x = 5
     var y = 6
+    let `let` = 7
 
 ## Labeled parameters
 
 TODO
+
+## Console IO
+
+    readline()
+
