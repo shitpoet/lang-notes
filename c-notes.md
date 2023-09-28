@@ -1,7 +1,7 @@
 # C for non-C programmers
 
 
-# Types
+## Types
 
 `char` can be signed or unsigned.
 
@@ -12,3 +12,5 @@
 `short` is a shorthand for `short int`.
 
 `long` is a shorthand for `long int`.
+
+## Literal
