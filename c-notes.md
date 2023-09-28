@@ -1,6 +1,5 @@
 # C for non-C programmers
 
-
 ## Types
 
 `char` can be signed or unsigned.
