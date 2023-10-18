@@ -111,6 +111,20 @@ Java requires all code path to have `return`-like statement in a function.
 For uninitialized variables Java has definite initialization analys, used also for `final` local variables.
 
 
+## Control flow
+
+### `switch`
+
+There're two `switch` construct syntaxes: C-like and shortened `switch` statement/expresion:
+
+    int x = 1;
+    String s = switch (x) {
+        case 1 -> "one";
+        case 2 -> "two";
+        default -> "?";
+    };
+
+
 ## Generics and type erasure
 
 Generics in Java are checked on compile time and then normalized to use `Object` internally. It's called type erasure. So there is no reification of templated code.

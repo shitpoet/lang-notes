@@ -50,3 +50,42 @@ There's `wchar_t` for multi-byte strings. AFAIK its size is not specified.
     '\x61' ('a')
     "hello"  // creates extra '\0'
 
+
+## POSIX IO and stdio IO
+
+POSIX IO is more low-level and thread-safe. Works with file-like objects (sockets, pipes, signal streams).
+
+    open close read write
+    remove(name)
+    rename(name, name)
+    todo: seek, tell
+
+File descriptor is just a `int` number.
+
+There are STDIN_FILENO and STDOUT_FILENO constants.
+
+POSIX functions also can be called through `syscall` assembly instruction.
+
+`stdio.h` functions have buffering by default and aren't thread-safe:
+
+    fopen(name, char* flags)
+    fclose(f)
+    fprintf(f, ...)
+    fscanf(f, ...)
+    getchar()  // stdin
+    putchar(c)  // stdout
+    fgetc
+    fputc
+    fgets(s, bufsize, f)
+    fputc(s, f)
+    getline(&buffer, &size, f)
+    feof // checks for EOF **after** an op
+    fflush(f)
+    ...
+    todo: seek, tell, buffering?
+
+File descriptor is `FILE*`.
+
+There are `stdin` and `stdout` constants.
+
+On end-of-stream `EOF` is returned.
