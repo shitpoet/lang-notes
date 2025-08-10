@@ -4,6 +4,7 @@ Swift (2014) is a language from Apple, replacing their Objective C language.
 
 Swift is reference-counting, value oriented (copy-on-write) imperative and OOP programming language without a virtual machine.
 
+
 ## Primitive types
 
     Bool
@@ -41,6 +42,10 @@ There're fixed width signed and unsigned integer types:
     1..5     # closed range
     1..<5    # half-open range
 
+### Bounds
+
+    Int.max
+
 ### String interpolation
 
 All string literals support interpolation with `\()`:
@@ -54,7 +59,7 @@ All string literals support interpolation with `\()`:
     ##"""##
     ###"""###
 
-### MUlti-line strings
+### Multi-line strings
 
     """
       some
@@ -66,7 +71,7 @@ All string literals support interpolation with `\()`:
       text
     """#
 
-#### Arrays, dictionaries
+### Array literals, dictionary literals
 
 Empty collections' literals require context:
 
@@ -91,11 +96,49 @@ Empty collections' literals require context:
     var y = 6
     let `let` = 7
 
-## Labeled parameters
+
+## Numeric operations
+
+Swift checks all arithmetic operations for overflow / underflow.
+
+Also it checks type conversion operatinos for overflow / underflow.
+
+
+## Functions
+
+nested function, lambdas
+function overloading
+
+### Labeled parameters
 
 TODO
+
+### Lambdas
+
+func triple(number: Int) -> Int {
+    let result = 3 * number
+    return result
+}
+
+print(
+    [11, 22, 33].map(triple)
+)
+[11, 22, 33].map({ $0 * 3 })
+
+    { () in
+        print("test")
+        return secret
+    }
+
+    { () in secret }
+
+    { $0 + $1 }    // type should be inferrable
+
+[33, 11, 22].sorted { $0 < $1 }
 
 ## Console IO
 
     readline()
 
+===================
+let s = String(d)
